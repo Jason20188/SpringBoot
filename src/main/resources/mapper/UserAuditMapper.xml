@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.haofenqi.routes.dao.UserAuditMapper">
-
-    <select id="findOneByAuditId" resultType="com.haofenqi.routes.entity.UserAudit">
-        select * from user_audit where audit_id=#{auditId} and deleted_at is null limit 1
-    </select>
-</mapper>
