@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haofenqi.routes.dao.UserPhoneInfoMapper">
+
+    <select id="findByUidAndAction" resultType="com.haofenqi.routes.entity.UserPhoneInfo">
+        select * from user_phone_info where uid = #{uid} AND `action` = #{action} AND deleted_at is null
+        ORDER BY id desc LIMIT 1
+    </select>
+</mapper>
