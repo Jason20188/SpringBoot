@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haofenqi.routes.dao.UserAccountMapper">
+
+    <select id="findUserAccountByUid" resultType="com.haofenqi.routes.entity.UserAccount">
+        SELECT * FROM user_account WHERE uid = #{uid} and deleted_at is null limit 1
+    </select>
+
+    <select id="findUserAccountWithDelByUid" resultType="com.haofenqi.routes.entity.UserAccount">
+        SELECT * FROM user_account WHERE uid = #{uid} limit 1
+    </select>
+
+    <select id="findOneByUserKey" resultType="com.haofenqi.routes.entity.UserAccount">
+        SELECT * FROM user_account WHERE system_unique_id = #{userKey} AND deleted_at is null ORDER BY uid DESC LIMIT 1
+    </select>
+
+    <select id="findOneWithDelByUserKey" resultType="com.haofenqi.routes.entity.UserAccount">
+        SELECT * FROM user_account WHERE system_unique_id = #{userKey} ORDER BY uid DESC LIMIT 1
+    </select>
+
+
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haofenqi.routes.dao.UserLoanMapper">
+
+    <select id="findLastSuccessRecord" resultType="com.haofenqi.routes.entity.UserLoan">
+        select * from user_loan where uid=#{uid} AND status=5 AND deleted_at is null order by loan_id desc limit 1
+    </select>
+
+    <select id="findLoanByOverdue" resultType="com.haofenqi.routes.entity.UserLoan">
+        select * from user_loan where uid=#{uid} AND overdue_status=1 AND deleted_at is null limit 1
+    </select>
+
+    <select id="getUserLoanByUidAndStatus" resultType="com.haofenqi.routes.entity.UserLoan">
+        select * from user_loan where uid = #{uid} AND status = #{status} AND deleted_at is null ORDER BY id DESC
+    </select>
+
+</mapper>
