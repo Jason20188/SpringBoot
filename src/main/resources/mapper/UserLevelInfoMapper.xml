@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.haofenqi.routes.dao.UserLevelInfoMapper">
-
-    <select id="findUserLevelInfo" resultType="com.haofenqi.routes.entity.UserLevelInfo">
-        select * from user_level_info where level=#{level}  limit 1
-    </select>
-</mapper>

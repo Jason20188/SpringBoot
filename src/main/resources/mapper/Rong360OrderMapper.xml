@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.haofenqi.routes.dao.Rong360OrderMapper">
-
-    <select id="findOneByUid" resultType="com.haofenqi.routes.entity.Rong360Order">
-         select * from rong360_order where uid=#{uid} and deleted_at is null order by id desc  limit 1
-    </select>
-</mapper>
